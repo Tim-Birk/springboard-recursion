@@ -61,8 +61,21 @@ function findIndex(arr, val) {
 }
 
 /** revString: return a copy of a string, but in reverse. */
+function revString(str) {
+  // //how I'd normally do this:
+  // return str.split('').reverse().join('');
 
-function revString(str) {}
+  // if I HAVE to use recursion for this would be the way I'd do it:
+  let result = '';
+  function _revString(str) {
+    if (str === '') return;
+
+    result += str[str.length - 1];
+    _revString(str.substr(0, str.length - 1));
+  }
+  _revString(str);
+  return result;
+}
 
 /** gatherStrings: given an object, return an array of all of the string values. */
 

@@ -35,8 +35,22 @@ function everyOther(str) {
 }
 
 /** isPalindrome: checks whether a string is a palindrome or not. */
+// isPalindrome('tacocat') //true
+// isPalindrome('racecar') //true
+// isPalindrome('a') //true
+// isPalindrome('helloolleh') //true
+// isPalindrome('tacodog') //false
+// isPalindrome('az') //false
+// isPalindrome('goodbye') //false
+function isPalindrome(str) {
+  if (str.length <= 1) return true;
 
-function isPalindrome(str) {}
+  if (str[0] !== str[str.length - 1]) {
+    return false;
+  } else {
+    return isPalindrome(str.substring(1, str.length - 1));
+  }
+}
 
 /** findIndex: return the index of val in arr (or -1 if val is not present). */
 

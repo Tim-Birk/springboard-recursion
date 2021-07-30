@@ -11,5 +11,8 @@
   "license": "ISC",
   "devDependencies": {
     "jest": "^24.1.0"
+  },
+  "dependencies": {
+    "prettier": "^2.3.2"
   }
 }

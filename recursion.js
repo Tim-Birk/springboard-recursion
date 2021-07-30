@@ -35,13 +35,6 @@ function everyOther(str) {
 }
 
 /** isPalindrome: checks whether a string is a palindrome or not. */
-// isPalindrome('tacocat') //true
-// isPalindrome('racecar') //true
-// isPalindrome('a') //true
-// isPalindrome('helloolleh') //true
-// isPalindrome('tacodog') //false
-// isPalindrome('az') //false
-// isPalindrome('goodbye') //false
 function isPalindrome(str) {
   if (str.length <= 1) return true;
 
@@ -53,8 +46,19 @@ function isPalindrome(str) {
 }
 
 /** findIndex: return the index of val in arr (or -1 if val is not present). */
-
-function findIndex(arr, val) {}
+function findIndex(arr, val) {
+  let idx = 0;
+  function _findIndex(arr, val) {
+    if (!arr || arr.length === 0) return -1;
+    if (arr[0] === val) {
+      return idx;
+    } else {
+      idx++;
+      return _findIndex(arr.slice(1), val);
+    }
+  }
+  return _findIndex(arr, val);
+}
 
 /** revString: return a copy of a string, but in reverse. */
 

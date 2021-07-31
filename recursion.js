@@ -78,8 +78,20 @@ function revString(str) {
 }
 
 /** gatherStrings: given an object, return an array of all of the string values. */
-
-function gatherStrings(obj) {}
+function gatherStrings(obj) {
+  let result = [];
+  const _gatherStrings = (obj) => {
+    for (prop in obj) {
+      if (typeof obj[prop] === 'string') {
+        result.push(obj[prop]);
+      } else {
+        _gatherStrings(obj[prop]);
+      }
+    }
+  };
+  _gatherStrings(obj);
+  return result;
+}
 
 /** binarySearch: given a sorted array of numbers, and a value,
  * return the index of that value (or -1 if val is not present). */
